@@ -24,26 +24,15 @@
 
 
     <section class="top_section">
-
-
-
-
-
         <div class="header">
-
             <nav class='nav'>
-
                 <div class="logo">CRL</div>
-
-    
-
-
-
                 <input type="checkbox" name="checkbox" id="checkbox">
-
                 <label for="checkbox" class="menubutton">
+                    <div class='bar bar1 '></div>
+                    <div class='bar bar2 '></div>
+                    <div class='bar bar3 '></div>
                 </label>
-
                 <div class="navbar">
                     <ul class="navlist">
                         <li class="nav-item"><a href='#' class='nav-link'>Home</a></li>
@@ -52,11 +41,11 @@
                         <li class="nav-item"><a href='#' class='nav-link'>Sign in</a></li>
                         <li class="nav-item"><a href='#' class='nav-link'>Sign up</a></li>
                     </ul>
-            
+
                 </div>
 
             </nav>
-eretertret
+
 
 
         </div>
@@ -72,7 +61,7 @@ eretertret
 
 
 
-    </section>
+
     <section class="central">
 
 
@@ -95,38 +84,71 @@ eretertret
 </body>
 <script>
     window.addEventListener('resize', updatemenustatus);
-
+    let locked = false;
     const box = document.getElementById("checkbox");
+    box.checked = false;
+    updatemenustatus();
     box.addEventListener("change", updatemenustatus);
 
 
 
     function updatemenustatus() {
-
-
         const nav = document.querySelector(".navlist");
         const navdirection = window.getComputedStyle(nav).flexDirection;
-        const navlist=document.querySelector(".navlist");
-        if(navdirection=="column"){
-        const isChecked=box.checked;
+        const navlist = document.querySelector(".navlist");
 
-        if (isChecked){
-
-navlist.style.height="auto";
-
+        const isChecked = box.checked;
+        if (navdirection == "column") {
+            if (isChecked) {
+                navlist.style.height = "auto";
+                navlist.style.opacity = "1";
+            } else {
+                navlist.style.height = "0em";
+                navlist.style.opacity = "0";
+            }
         } else {
-            navlist.style.height="0em";
-        }
-        } 
-        
-        
-        
-        
-        
-        
-        else {}
 
-        return false;
+            navlist.style.height = "auto";
+            navlist.style.opacity = "1";
+        }
+
+        if (locked) return;
+        locked = true;
+        const els = document.getElementsByClassName("bar");
+        for (let el of els) {
+            if (isChecked) {
+                el.classList.add("trans1")
+            } else {
+                el.classList.remove("trans2")
+            };
+        }
+
+        setTimeout(function () {
+            for (let el of els) {
+                if (isChecked) {
+                    el.classList.add("trans2")
+                } else {
+                    el.classList.remove("trans1")
+                };
+            }
+
+            locked = false;
+
+        }, 450);
+
+
+
+
+
+    }
+
+
+
+
+
+
+    {
+
 
     }
 </script>
