@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@1&family=Oswald:wght@700&display=swap"
+        rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conquering Responsive Layouts Final Challenge</title>
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+    <section class="top_section">
+
+
+
+
+
+        <div class="header">
+
+            <nav class='nav'>
+
+                <div class="logo">CRL</div>
+
+    
+
+
+
+                <input type="checkbox" name="checkbox" id="checkbox">
+
+                <label for="checkbox" class="menubutton">
+                </label>
+
+                <div class="navbar">
+                    <ul class="navlist">
+                        <li class="nav-item"><a href='#' class='nav-link'>Home</a></li>
+                        <li class="nav-item"><a href='#' class='nav-link'>About</a></li>
+                        <li class="nav-item"><a href='#' class='nav-link'>Contact</a></li>
+                        <li class="nav-item"><a href='#' class='nav-link'>Sign in</a></li>
+                        <li class="nav-item"><a href='#' class='nav-link'>Sign up</a></li>
+                    </ul>
+            
+                </div>
+
+            </nav>
+eretertret
+
+
+        </div>
+        <div class="hero">
+            <div class="resp">Responsive layouts don't have to be a struggle</div>
+
+            <div class="lorem">Lorem i want to learn</div>
+
+        </div>
+
+    </section>
+
+
+
+
+    </section>
+    <section class="central">
+
+
+    </section>
+
+    <section class="final">
+
+
+
+    </section>
+
+    <section class="footer">
+
+
+
+    </section>
+
+
+
+</body>
+<script>
+    window.addEventListener('resize', updatemenustatus);
+
+    const box = document.getElementById("checkbox");
+    box.addEventListener("change", updatemenustatus);
+
+
+
+    function updatemenustatus() {
+
+
+        const nav = document.querySelector(".navlist");
+        const navdirection = window.getComputedStyle(nav).flexDirection;
+        const navlist=document.querySelector(".navlist");
+        if(navdirection=="column"){
+        const isChecked=box.checked;
+
+        if (isChecked){
+
+navlist.style.height="auto";
+
+        } else {
+            navlist.style.height="0em";
+        }
+        } 
+        
+        
+        
+        
+        
+        
+        else {}
+
+        return false;
+
+    }
+</script>
+
+</html>
