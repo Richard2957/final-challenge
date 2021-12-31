@@ -73,22 +73,9 @@ transition-property: all;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 .top_section{
     display:flex;
     flex-direction: column;
-    background-color: aqua;
     width:100%;
    
 }
@@ -149,15 +136,86 @@ transition-duration: 1200ms;
 .nav-link{
 text-decoration: none;
 text-transform: uppercase;
-margin:5px 10px;
+margin:5px 5px;
 font-family: 'Montserrat', sans-serif;
 font-size:18px;
 color:white;
 opacity:.8;
+
+background-color:transparent;
+padding:.1em 1.2em;
+border-radius:15px;
 }
 
-.nav-link:hover{
+.nav-link:hover, .nav-link:focus{
     opacity:1;
+    background-color:var(--card-background);
+ }
+
+ .nav-item:last-child  .nav-link{
+     background-color:var(--brown);
+}
+
+.nav-item:last-child  .nav-link:hover,
+.nav-item:last-child  .nav-link:focus{
+    background-color:white;
+    color:var(--hero-background);
+}
+
+
+.hero{
+width:100%;
+padding:0 10%;
+background-color: var(--hero-background);
+display:flex;
+justify-content: space-between;
+flex-direction:row;
+border:2px red solid;
+}
+
+.hero > *{
+    flex: 0  0 50%;
+
+}
+.resp{
+font-size:90px;
+font-weight: 600;;
+color:white;
+padding:90px 0 90px 0;
+line-height: 110%;
+}
+ .resp .span{
+    color:var(--brown);
+  
+}
+
+.lorem{
+    
+    padding:30em 1em 0 2em;
+    color:white;
+}
+
+.lorum-text{
+    font-size: 24px;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.lorum-button{
+    margin-top:2em;
+    display:inline-block;
+    background-color:var(--brown);
+  font-size:24px;
+  font-weight:600;
+    text-transform: uppercase;
+    padding:.1em 1.2em;
+    border-radius:15px;
+
+}
+.lorum-button:hover, .lorum-button:focus{
+background-color: white;
+color:black;
+
 }
 
 /*   
@@ -183,6 +241,10 @@ body{
     background-color: burlywood;
 }
 
+
+.navlist{
+    transition-property: none;
+}
 
 }
 
@@ -233,10 +295,25 @@ overflow:hidden;
 }
 
 
+.hero{
+    flex-direction: column;;
+}
+
+.lorem{
+    padding:0;
+}
+
+.lorum-text, .resp{
+    text-align: center;
+}
+.lorum-button{
+    margin: 20px auto 50px auto;
+    display:block;
+    text-align: center;
+    width:60%;
 
 
 
-
-
+}
 
     }
